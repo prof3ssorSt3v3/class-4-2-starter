@@ -42,3 +42,11 @@ self.addEventListener('fetch', (ev) => {
   //and return the response
   ev.respondWith(ev.request);
 });
+
+self.addEventListener('message', (ev) => {
+  //message received from script
+  let msg = {
+    text: 'Thanks for the message',
+  };
+  self.postMessage(msg);
+});
